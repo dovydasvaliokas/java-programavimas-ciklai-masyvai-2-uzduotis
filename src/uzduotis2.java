@@ -13,23 +13,44 @@ public class uzduotis2 {
         y = skaitytuvas1.nextInt();
         System.out.println("y = " + y);
         System.out.println(" arLyginis(int x, int y)= " + arLyginis(x,y));
+        System.out.println("nestedIfPavyzdys(x, y) = " + nestedIfPavyzdys(x, y));
 
     }
 
+
+
     public static int arLyginis(int x, int y) {
-        if (x % 2 >=0) {
-            return x*y;
-
-        else if (y > 100)
-            return x-y;
-
-        if (y<100){
-            return y-x;
-
-        else { y=100;
+        if (x % 2 == 0) {
+            return x * y;
+        }
+        else if (y > 100) {
+            return y - x;
+        }
+        else if (y<100) {
+            return x - y;
+        }
+        else {
             return 0;
+        }
+    }
 
-
+    public static int nestedIfPavyzdys(int x, int y) {
+        if (x % 2 == 0) {
+            return x * y;
+        }
+        else {
+            if (y > 100) {
+                return y - x;
+            }
+            else {
+                if (y < 100) {
+                    return x - y;
+                }
+                else {
+                    return 0;
+                }
+            }
+        }
     }
 }
 
